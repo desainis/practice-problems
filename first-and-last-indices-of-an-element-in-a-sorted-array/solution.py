@@ -14,10 +14,38 @@ Output: [-1, -1]
 
 class Solution: 
   def getRange(self, arr, target):
+    start = -1
+    end = -1
+    for i in range(len(arr)):
+      if arr[i] == target:
+        start = i
+        break
+    
+    for j in range(len(arr) - 1, -1, -1):
+      if arr[j] == target:
+        end = j
+        break
+    
+    return [start, end]
     # Fill this in.
   
 # Test program 
 arr = [1, 2, 2, 2, 2, 3, 4, 7, 8, 8] 
 x = 2
 print(Solution().getRange(arr, x))
-# [1, 4]
+#[1, 4]
+
+arr = [1,3,3,5,7,8,9,9,9,15] 
+x = 9
+print(Solution().getRange(arr, x))
+# [6, 8]
+
+arr = [100, 150, 150, 153] 
+x = 150
+print(Solution().getRange(arr, x))
+# [1, 2]
+
+arr = [1,2,3,4,5,6,10] 
+x = 9
+print(Solution().getRange(arr, x))
+# [-1, -1]
