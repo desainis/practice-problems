@@ -6,9 +6,13 @@
 # Here's the function signature:
 
 def singleNumber(nums):
-  # Fill this in.
+  n = sorted(nums)
+  for i in range(0,len(n) - 1):
+    if n[i] != n[i+1]:
+      return n[i]
+        
 
-print singleNumber([4, 3, 2, 4, 1, 3, 2])
+print(singleNumber([4, 3, 2, 4, 1, 3, 2]))
 # 1
 
 # Challenge: Find a way to do this using O(1) memory.
